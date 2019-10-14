@@ -10,6 +10,8 @@ For instance an IPP version it's located in:
 C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2019.5.281\windows\redist\intel64_win\ipp
 ```
 
+**ATTENTION!** It needs Intel processors. It's not tested for AMD.
+
 ## Low pass signal filtering
 
 An example of the simplest usage:
