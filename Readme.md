@@ -44,6 +44,8 @@ before every `Filter` call.
 It's a simple benchmark to verify performance compared with the (already used and payed :-)) *NationalInstruments.Analysis.Enterprise* library
 included in *NI Measurement Studio*.
 
+Input signal: **20000** samples.
+
 | order: **8th**,  sampl. feq: **10KHz**,  cutoff **3KHz** |   NI [ms] |   this [ms] |
 |----------------------------------------------------------|-----------|-------------|
 | Filter creation										   |     0.9   |      0.04   |
