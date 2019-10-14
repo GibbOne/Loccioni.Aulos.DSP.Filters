@@ -3,6 +3,8 @@
 It contains a set of utilities to implement some digital signal processing.
 This is a wrapper around [Intel Performance Primitives](https://software.intel.com/en-us/ipp).
 
+A copy of installer of IPP installer can be downloaded from [loccioni ftp](http://servizi.loccioni.com/Portal/FTP/118/w_ipp_2019.5.281.exe.zip).
+
 In order to make it works, please add path of Intel library to `PATH` Windows system variable.
 For instance an IPP version it's located in:
 
