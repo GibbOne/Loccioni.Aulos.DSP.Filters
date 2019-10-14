@@ -19,7 +19,7 @@ namespace Loccioni.Aulos.Dsp.Filters.Tests
         public void SimpleFiltering()
         {
             // ARRANGE
-            var filter = new ButterworthLowpassFilter(1000, 300, 8);
+            var filter = new ButterworthLowpassFilter(8, 1000, 300);
             var inputSignal = GenerateStep(2000);
 
             // ACT

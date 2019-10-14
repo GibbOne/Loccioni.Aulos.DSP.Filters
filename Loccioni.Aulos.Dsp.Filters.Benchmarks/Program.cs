@@ -11,7 +11,7 @@ namespace Loccioni.Aulos.Dsp.Filters.Benchmarks
     {
         static void Main()
         {
-            var summary = BenchmarkRunner.Run<SimpleSample>();
+            var summary = BenchmarkRunner.Run<ButterworthLowpassFilterBenchmark>();
         }
     }
 }

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loccioni.Aulos.Dsp.Filters"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{78EF3BA1-B13B-4466-BBAF-E99272CE0CBF}"
 	ProjectSection(SolutionItems) = preProject
-		Loccioni.Aulos.Dsp.Filters\Readme.md = Loccioni.Aulos.Dsp.Filters\Readme.md
+		Readme.md = Readme.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loccioni.Aulos.Dsp.Filters.Tests", "Loccioni.Aulos.Dsp.Filters.Tests\Loccioni.Aulos.Dsp.Filters.Tests.csproj", "{FE3C49DD-BE39-452E-A613-21201962973F}"

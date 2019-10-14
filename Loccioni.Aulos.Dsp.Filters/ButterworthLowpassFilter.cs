@@ -18,7 +18,7 @@ namespace Loccioni.Aulos.Dsp.Filters
         /// <param name="samplingFrequency">Sampling frequency of input signal in Hertz</param>
         /// <param name="cutoff">Cut off frequency in Hertz. It must be lesser than half <paramref name="samplingFrequency"/></param>
         /// <param name="order">Order of the filter [1..inf[</param>
-        public ButterworthLowpassFilter(double samplingFrequency, double cutoff, int order)
+        public ButterworthLowpassFilter(int order, double samplingFrequency, double cutoff)
         {
             this.order = order;
             int externalBuffersize = 0;
