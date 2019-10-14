@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>https://git.loccioni.com/aulos/loccioni.aulos.dsp.filters/blob/master/CHANGELOG.md</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <iconUrl>https://git.loccioni.com/uploads/-/system/group/avatar/5/logo_nuget.png</iconUrl>
+    <projectUrl>https://git.loccioni.com/aulos/loccioni.aulos.dsp.filters</projectUrl>
+    <tags></tags>
+  </metadata>
+</package>
