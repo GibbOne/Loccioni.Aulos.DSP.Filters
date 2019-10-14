@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Loccioni.Aulos.Dsp.Filters.Benchmarks")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Benchmark for Loccioni.Aulos.Dsp.Filters")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Loccioni")]
 [assembly: AssemblyProduct("Loccioni.Aulos.Dsp.Filters.Benchmarks")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyCopyright("Copyright © Loccioni 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
