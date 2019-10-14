@@ -36,7 +36,7 @@ Butterworth filter = new Butterworth(
 var filteredData = f.Filter(sourceData);
 ```
 
-If each new data array is not time connected, you should reset internal filter by calling `Reset()` method
+If each new data array is not time connected, you should reset internal filter state by calling `Reset()` method
 before every `Filter` call. 
 
 ## Benchmark
@@ -44,12 +44,17 @@ before every `Filter` call.
 It's a simple benchmark to verify performance compared with the (already used and payed :-)) *NationalInstruments.Analysis.Enterprise* library
 included in *NI Measurement Studio*.
 
-Input signal: **20000** samples.
+**Input signal**: **20000** samples.
 
 | order: **8th**,  sampl. feq: **10KHz**,  cutoff **3KHz** |   NI [ms] |   this [ms] |
 |----------------------------------------------------------|-----------|-------------|
 | Filter creation										   |     0.9   |      0.04   |
 | Filter creation and 10 time application                  |    68.0   |   **62.0**  |
+
+**Boundary conditions**: BenchmarkDotNet=v0.11.5, OS=Windows 10.0.17763.805 (1809/October2018Update/Redstone5)
+Intel Core i7-4770S CPU 3.10GHz (Haswell), 1 CPU, 8 logical and 4 physical cores
+  [Host]     : .NET Framework 4.7.2 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3468.0  [AttachedDebugger]
+  DefaultJob : .NET Framework 4.7.2 (CLR 4.0.30319.42000), 64bit RyuJIT-v4.7.3468.0
 
 ## References
 
