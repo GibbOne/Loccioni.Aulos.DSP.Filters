@@ -49,7 +49,7 @@ included in *NI Measurement Studio*.
 | order: **8th**,  sampl. feq: **10KHz**,  cutoff **3KHz** |   NI [ms] |   this [ms] |
 |----------------------------------------------------------|-----------|-------------|
 | Filter creation										   |     0.9   |      0.04   |
-| Filter creation and 10 time application                  |    68.0   |   **62.0**  |
+| Filter creation and 100 time application                 |    68.0   |   **62.0**  |
 
 **Boundary conditions**: 
 - BenchmarkDotNet=v0.11.5, OS=Windows 10.0.17763.805 (1809/October2018Update/Redstone5)
