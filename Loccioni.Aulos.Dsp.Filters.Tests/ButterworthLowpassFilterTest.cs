@@ -16,6 +16,7 @@ namespace Loccioni.Aulos.Dsp.Filters.Tests
         }
 
         [Test]
+        [Repeat(10000000)]
         public void SimpleFiltering()
         {
             // ARRANGE

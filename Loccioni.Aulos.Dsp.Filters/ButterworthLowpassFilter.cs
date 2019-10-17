@@ -22,7 +22,7 @@ namespace Loccioni.Aulos.Dsp.Filters
         {
             this.order = order;
             int externalBuffersize = 0;
-            taps = new double[2 * order + 1];
+            taps = new double[2 * (order + 1)];
 
             // compute coefficients
             int status;
