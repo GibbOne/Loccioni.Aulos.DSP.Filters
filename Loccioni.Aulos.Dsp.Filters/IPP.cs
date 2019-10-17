@@ -10,6 +10,28 @@ namespace Loccioni.Aulos.Dsp.Filters
     static class IPP
     {
         public static int NO_ERRORS = 0;
+        private static bool initialized = false;
+        /// <summary>
+        /// Automatically initializes the library code that is most appropriate for the current processor type.
+        /// </summary>
+        public static void Initialize()
+        {
+            if (!initialized)
+            {
+                var ret = ippInit();
+                if (ret != NO_ERRORS)
+                    throw new IPPException(ret);
+                initialized = true;
+            }
+        }
+
+        /// <summary>
+        /// Force an automatically initialization of the library code that is most appropriate 
+        /// for the current processor type.
+        /// </summary>
+        [SuppressUnmanagedCodeSecurity()]
+        [DllImport("ippcore.dll")]
+        public extern static int ippInit();
 
         [SuppressUnmanagedCodeSecurity()]
         [DllImport("ippcore.dll")]

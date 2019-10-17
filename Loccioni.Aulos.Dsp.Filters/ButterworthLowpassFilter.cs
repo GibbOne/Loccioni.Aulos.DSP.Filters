@@ -20,6 +20,8 @@ namespace Loccioni.Aulos.Dsp.Filters
         /// <param name="order">Order of the filter [1..inf[</param>
         public ButterworthLowpassFilter(int order, double samplingFrequency, double cutoff)
         {
+            IPP.Initialize();
+
             this.order = order;
             int externalBuffersize = 0;
             taps = new double[2 * (order + 1)];
