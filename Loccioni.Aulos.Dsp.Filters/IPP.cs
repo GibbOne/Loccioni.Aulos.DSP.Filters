@@ -25,6 +25,14 @@ namespace Loccioni.Aulos.Dsp.Filters
             }
         }
 
+        [SuppressUnmanagedCodeSecurity()]
+        [DllImport("ipps.dll")]
+        public extern static IntPtr ippsMalloc_8u(int sizeInByte);
+
+        [SuppressUnmanagedCodeSecurity()]
+        [DllImport("ipps.dll")]
+        public extern static void ippsFree(IntPtr pointerToMemory);
+
         /// <summary>
         /// Force an automatically initialization of the library code that is most appropriate 
         /// for the current processor type.
@@ -48,7 +56,7 @@ namespace Loccioni.Aulos.Dsp.Filters
 
         [SuppressUnmanagedCodeSecurity()]
         [DllImport("ipps.dll")]
-        public extern static int ippsIIRInit_64f(ref IntPtr state, double[] taps, int order, IntPtr delayLine, double[] externalBuffer);
+        public extern static int ippsIIRInit_64f(ref IntPtr state, double[] taps, int order, IntPtr delayLine, IntPtr externalBuffer);
 
 
         [SuppressUnmanagedCodeSecurity()]
@@ -63,7 +71,7 @@ namespace Loccioni.Aulos.Dsp.Filters
 
         [SuppressUnmanagedCodeSecurity()]
         [DllImport("ipps.dll")]
-        public extern static int ippsIIRGenLowpass_64f(double cutoffFrequency, double ripple, int order, double[] taps, IppsIIRFilterType filterType, double[] externalBuffer);
+        public extern static int ippsIIRGenLowpass_64f(double cutoffFrequency, double ripple, int order, double[] taps, IppsIIRFilterType filterType, IntPtr externalBuffer);
 
 
 

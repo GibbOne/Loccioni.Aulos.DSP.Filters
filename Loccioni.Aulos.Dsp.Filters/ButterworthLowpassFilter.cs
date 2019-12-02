@@ -6,11 +6,13 @@ namespace Loccioni.Aulos.Dsp.Filters
     /// A Butterworth low pass filter.
     /// See https://it.wikipedia.org/wiki/Filtro_Butterworth
     /// </summary>
-    public class ButterworthLowpassFilter
+    public class ButterworthLowpassFilter: IDisposable
     {
         private double[] taps;
         private IntPtr state;
         private int order;
+        private IntPtr externalBuffer2;
+        private IntPtr externalBuffer;
 
         /// <summary>
         /// A Butterworth low pass filter.
@@ -30,7 +32,7 @@ namespace Loccioni.Aulos.Dsp.Filters
             int status;
             if ((status = IPP.ippsIIRGenGetBufferSize(order, ref externalBuffersize)) != IPP.NO_ERRORS)
                 throw new IPPException(status);
-            var externalBuffer2 = new double[externalBuffersize / sizeof(double)];
+            externalBuffer2 = IPP.ippsMalloc_8u(externalBuffersize);
             if ((status = IPP.ippsIIRGenLowpass_64f(cutoff / samplingFrequency, 0, order, taps, IPP.IppsIIRFilterType.ippButterworth, externalBuffer2)) != IPP.NO_ERRORS)
                 throw new IPPException(status);
 
@@ -47,7 +49,7 @@ namespace Loccioni.Aulos.Dsp.Filters
             if ((status = IPP.ippsIIRGetStateSize_64f(order, ref externalBuffersize)) != IPP.NO_ERRORS)
                 throw new IPPException(status);
 
-            var externalBuffer = new double[externalBuffersize / sizeof(double)];
+            externalBuffer = IPP.ippsMalloc_8u(externalBuffersize);
             if ((status = IPP.ippsIIRInit_64f(ref state, taps, order, IntPtr.Zero, externalBuffer)) != IPP.NO_ERRORS)
                 throw new IPPException(status);
         }
@@ -65,6 +67,12 @@ namespace Loccioni.Aulos.Dsp.Filters
             if ((status = IPP.ippsIIR_64f(source, destination, source.Length, state)) != IPP.NO_ERRORS)
                 throw new IPPException(status);
             return destination;
+        }
+
+        public void Dispose()
+        {
+            IPP.ippsFree(externalBuffer);
+            IPP.ippsFree(externalBuffer2);
         }
     }
 }
