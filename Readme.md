@@ -25,6 +25,8 @@ Butterworth filter = new Butterworth(
     cutoff: 300);            //Hz
 
 var filteredData = f.Filter(sourceData);
+
+filter.Dispose();
 ```
 
 In order to improve performance, you could create the filter one time and apply it at each new data arrival.
@@ -35,9 +37,11 @@ Butterworth filter = new Butterworth(
     samplingFrequency: 1000, //Hz 
     cutoff: 300);            //Hz
 
-// later on a data arrival event...
-
+// later on a data arrival event that could occurs more time...
 var filteredData = f.Filter(sourceData);
+
+// on client dispose
+filter.Dispose();
 ```
 
 If each new data array is not time connected, you should reset internal filter state by calling `Reset()` method
